@@ -1,0 +1,25 @@
+# Allowlist: ignore everything, then re-include only what someone needs to install and use easylog.
+# Anything new (vendor files, extracted installers, decompiled code, downloaded CSVs, device dumps) stays
+# out of git until it is added here on purpose.
+*
+
+# --- project files
+!.gitignore
+!README.md
+!LICENSE
+!PLAN.md
+!WRITE_PROTOCOL.md
+!build.sh
+
+# --- the tool (includes the bundled pyusb in easylog/_vendor and its license)
+!easylog/
+!easylog/**
+
+# --- probe scripts (our own code only; no .bin/.json captures)
+!probe/
+!probe/*.py
+
+# --- never, even inside the allowed folders
+__pycache__/
+*.pyc
+.DS_Store
